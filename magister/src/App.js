@@ -1,5 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
+import InitialPage from './components/initialPage/initialPage';
+import Layout from './components/Layout/Layout';
+
 
 
 
@@ -7,7 +9,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>HELLO MANOLO</h1>
+      <Layout>
+        <InitialPage />
+      </Layout>
     </div>
   );
 }
