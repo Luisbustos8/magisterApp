@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import firebaseConfig from './firebase-config';
-import { FirebaseAppProvider } from 'reactfire';
+
+import './firebase';
 
 ReactDOM.render(
-  <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-   
+  
     <App />
    
-  </FirebaseAppProvider>,
+  ,
   document.getElementById('root')
 );
 
