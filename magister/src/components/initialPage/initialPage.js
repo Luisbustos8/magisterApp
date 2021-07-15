@@ -6,6 +6,9 @@ import Button from '../Button/button';
 
 const InitialPage = () => {
 
+    const onclick = (event) => {
+        console.log(event)
+    }
 
     return (
         <div>
@@ -15,10 +18,10 @@ const InitialPage = () => {
             </div>
             <div className='start-info'>
                 <h1 className='start-enrollment'>¡Comencemos con tu matrícula!</h1>
-                <p className='start-description'>Para comenzar a especializarte, vamos a realizar unas preguntas para darte el mejor servicio</p>
+                <p className='start-description'>Para comenzar a especializarte, vamos a realizar unas preguntas para darte el mejor servicio.</p>
             </div>
-            <div className='button'>
-                <Button label='comenzar' />
+            <div className='start-button'>
+                <Button classNames='start-button' label='Comenzar' onclick={onclick} onSubmit={onclick} />
             </div>
         </div>
     )

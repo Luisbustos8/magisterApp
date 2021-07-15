@@ -28,12 +28,22 @@
   font-size: 50px;
   font-family: "Noto Sans HK", sans-serif;
   color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .start-description {
   font-size: 30px;
   font-family: "Noto Sans HK", sans-serif, light 300;
   text-align: center;
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.start-button  {
+  display: flex;
+  justify-content: center;
 }
