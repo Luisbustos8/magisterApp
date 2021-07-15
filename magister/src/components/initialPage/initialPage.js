@@ -1,14 +1,14 @@
 import React  from 'react';
 import './initialPage.css';
 import  logo  from '../../assets/images/logo.png';
-import Button from '../Button/button';
+
 
 
 const InitialPage = () => {
 
-    const onclick = (event) => {
-        console.log(event)
-    }
+   const handleClick = (event) => {
+       console.log(event)
+   }
 
     return (
         <div>
@@ -21,7 +21,7 @@ const InitialPage = () => {
                 <p className='start-description'>Para comenzar a especializarte, vamos a realizar unas preguntas para darte el mejor servicio.</p>
             </div>
             <div className='start-button'>
-                <Button classNames='start-button' label='Comenzar' onclick={onclick} onSubmit={onclick} />
+                <button className='button' onClick={handleClick}>Comenzar</button>
             </div>
         </div>
     )
