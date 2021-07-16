@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;500&display=swap");
+.branch-location {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.initial-title {
+  font-size: 30px;
+  font-family: "Noto Sans HK", sans-serif;
+  color: #2c5cea;
+}
+.branch {
+  padding-right: 400px;
+}
+.title-select {
+  font-size: 23px;
+  font-family: "Noto Sans HK", sans-serif;
+  color: #2c5cea;
+}
+.student-box {
+  display: flex;
+  justify-content: start;
+  margin-left: 170px;
+}
+.student {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+.next {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 170px;
+}
