@@ -17,6 +17,7 @@ const Shedule = () => {
                 <div className='container-modality'>
                     <h2 className='modality'>Modalidad</h2>
                     <h4 className='modality'>(Selecciona una opción)</h4>
+                </div>
                 <div className='checkbox-modality'>
                     <Checkbox 
                         items={modality}
@@ -35,8 +36,8 @@ const Shedule = () => {
                     <a className='previous'>Volver atrás</a>
                 </div>
             </div>
-            </div>
         </div>
+        
     )
 }
 

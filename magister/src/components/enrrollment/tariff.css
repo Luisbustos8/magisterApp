@@ -1,0 +1,12 @@
+.container-tariff {
+  display: flex;
+  flex-direction: column;
+}
+
+.tariff {
+  display: flex;
+  margin-left: 150px;
+  margin-bottom: 10px;
+  font-family: "Noto Sans HK", sans-serif;
+  color: #2c5cea;
+}

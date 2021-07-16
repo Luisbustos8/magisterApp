@@ -3,6 +3,7 @@ import Phases from './phases';
 import './enrrollment.css';
 import Specialize from './specialize';
 import Shedule from './schedule-modality';
+import Tariff from './tariff';
 
 
 
@@ -42,7 +43,8 @@ const Enrrollment = () => {
                 <Phases />
                 <div className='fondo'>
                     {/* <Specialize /> */}
-                    <Shedule />
+                    {/* <Shedule /> */}
+                    <Tariff />
                 </div>
             </div>
         </div>
