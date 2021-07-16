@@ -1,6 +1,8 @@
 import React from 'react';
 import Phases from './phases';
 import './enrrollment.css';
+import Specialize from './specialize';
+import Shedule from './schedule-modality';
 
 
 
@@ -27,12 +29,20 @@ const Enrrollment = () => {
         setState({[input]: event.target.value})
     };
 
+    // const enrrollement = () => {
+    //     switch(step) {
+    //         case 1:
+    //             return ()
+    //     }
+    // }
+
     return (
         <div>
             <div className='container'>
                 <Phases />
                 <div className='fondo'>
-                    register boy
+                    {/* <Specialize /> */}
+                    <Shedule />
                 </div>
             </div>
         </div>
