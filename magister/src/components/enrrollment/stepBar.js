@@ -17,7 +17,7 @@ const StepBar = () => {
                 <li><div class="divider grey"></div></li>
                 <li><div class="node grey"></div><p>Datos Personales</p></li>
                 <li><div class="divider grey"></div></li>
-                <li><div class="node grey"></div><p>Forma de Pago</p></li>
+                <li><div class="node grey"></div><p>Confirmar matrícula</p></li>
             </ul>
         </div>
     )
