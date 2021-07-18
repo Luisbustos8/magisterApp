@@ -59,6 +59,8 @@
   font-family: "Noto Sans HK", sans-serif;
   margin-top: 3px;
   padding-top: 10px;
+  border: none;
+  background-color: white;
 }
 
 .previous:hover {

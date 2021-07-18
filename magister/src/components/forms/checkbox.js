@@ -4,18 +4,17 @@ import './forms.css';
 
 function Checkbox({  items, checked, handleChange}){
 
-   
+   const [selected, setSelected] = React.useState('');
+
+   const handleRadioChange = (item) => {
+        setSelected(item);
+        handleChange(item)
+   }
     return (
-        <div className="radio-toolbar" >
+        <div className="ra-button" >
             {items.map(item =>
-                <>
-                <input type="radio" items={items}  value={item} checked={checked === item} onChange={(event) => handleChange(event)}></input> 
-                <label for="radio-label">{item}</label>
-                </>
-                )}
-           
-                
-        
+                <button className={item === checked ? 'active-button' : 'radio-button'} onClick={() => handleRadioChange(item)} >{item}</button>
+            )}  
         </div>
     )
 }

@@ -3,7 +3,18 @@ import Checkbox from '../forms/checkbox';
 import './schedule-modality.css'
 
 
-const Shedule = () => {
+const Shedule = ({prevStep, nextStep, handleChange, values}) => {
+
+     const continueEnrollment = (e)=> {
+        e.preventDefault();
+        nextStep();
+    }
+    
+    const backEnrollment = (e) => {
+        e.preventDefault();
+        prevStep();
+    }
+
 
 
     const modality = ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 2020', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb 2021', 'ccccccccccccccccccccccccccccc 2022', 'dddddddddddddddddddddddddddd 2023']
@@ -21,6 +32,8 @@ const Shedule = () => {
                 <div className='checkbox-modality'>
                     <Checkbox 
                         items={modality}
+                        value={values.modality}
+                        onChange={handleChange=('modality')}
                          />
                 </div>
                  <div className='container-schedule'>
@@ -29,11 +42,24 @@ const Shedule = () => {
                 <div className='checkbox-schedule'>
                     <Checkbox 
                         items={schedule}
+                        onChange={handleChange=('schedule')}
+                        value={values.schedule}
                          />
                 </div>
                 <div className='buttons'>
-                    <button className='next-button'>Siguiente</button>
-                    <a className='previous'>Volver atrás</a>
+                    <button 
+                        className='next-button'
+                        onClick={continueEnrollment} 
+                    >
+                        Siguiente
+                    </button>
+                    <button 
+                        className='previous'
+                        onClick={backEnrollment}
+                        
+                    >
+                        Volver atrás
+                    </button>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ function SelectForm({ value, label, items, handleChange, name}) {
     return (
         <div>
             <select name={name} className='select' onChange={(event) => handleSelectChange(event)} items={items}>
-               {items.map(item => console.log(item) ||
+               {items.map(item => 
                     <option  value={item} label={item}  />
                )}
             </select>

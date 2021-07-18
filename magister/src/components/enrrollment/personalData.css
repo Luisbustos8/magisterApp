@@ -1,0 +1,67 @@
+.yourName  {
+  display: flex;
+  flex-direction: column;
+}
+.full-name {
+  display: flex;
+  margin-bottom: 10px;
+  font-family: "Noto Sans HK", sans-serif;
+  margin-left: 100px;
+}
+
+.input-Name {
+  display: flex;
+  margin-left: 100px;
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  font-family: "Noto Sans HK", sans-serif;
+}
+
+.container-data {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 20px;
+  margin-left: 80px;
+  margin-right: 100px;
+  outline-style: none;
+}
+.identify {
+  display: flex;
+  flex-direction: column;
+}
+
+.dni {
+  display: flex;
+  font-family: "Noto Sans HK", sans-serif;
+}
+
+.number-dni {
+  display: flex;
+  padding-top: 5px;
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  outline-style: none;
+}
+
+.years {
+  display: flex;
+  flex-direction: column;
+  font-family: "Noto Sans HK", sans-serif;
+  padding-top: 6px;
+}
+.edad {
+  display: flex;
+  font-family: "Noto Sans HK", sans-serif;
+}
+
+.year {
+  display: flex;
+  padding-top: 5px;
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  outline-style: none;
+}

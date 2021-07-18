@@ -6,7 +6,13 @@ import '../initialPage/initialPage.css';
 
 
 
-const Specialize = () => {
+const Specialize = ({nextStep, handleChange, values}) => {
+
+    const continueEnrollment = (e)=> {
+        e.preventDefault();
+        nextStep();
+    };
+    
 
     const item = ['patata', 'toni', 'moro', 'nfoqwnaoifnwinqwfnwnqìqnìqwenfìnew']
     const student =[ 'Sí', 'No', 'Sí, pero antes de 2017'];
@@ -14,8 +20,8 @@ const Specialize = () => {
     const [radiocheck, setRadioCheck] = React.useState();
 
     const radioBut = event => {
+        console.log(event)
         setRadioCheck(event)
-        console.log(setRadioCheck)
     }
     return (
         <div>
@@ -29,7 +35,8 @@ const Specialize = () => {
                     <SelectForm
                         items={item}
                         name={item}
-                        value={item}
+                        value={values.rama}
+                        onChange={handleChange('rama')}
                     />
                 </div>
                 <div className='location'>
@@ -38,22 +45,25 @@ const Specialize = () => {
                     <SelectForm
                         items={item}
                         name={item}
-                        value={item}
+                        value={values.localidad}
+                        onChange={handleChange('localidad')}
                     />
                 </div>
             </div>
                 <div className='student-box'>
-                <div className='student'>
-                    <h2>¿Has sido alumn@ de Magister</h2>
-                    <a>Consulta Condiciones</a>
-                    <Checkbox 
-                        items={student}
-                        checked={radiocheck}
-                        handleChange={radioBut}  />
-                </div>
+                    <div className='student'>
+                        <h2>¿Has sido alumn@ de Magister</h2>
+                        <a>Consulta Condiciones</a>
+                        <Checkbox 
+                            items={student}
+                            checked={radiocheck}
+                            handleChange={radioBut}
+                            values={values.exStudent}  />
+                        
+                    </div>
                 </div>
                 <div className='next'>
-                    <button className='button'>Siguiente</button>
+                    <button className='button' onClick={continueEnrollment} >Siguiente</button>
                 </div>
         </div>
     )
