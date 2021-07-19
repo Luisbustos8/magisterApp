@@ -12,9 +12,9 @@ function SelectForm({ value, label, items, handleChange, name}) {
 
     return (
         <div>
-            <select name={name} className='select' onChange={(event) => handleSelectChange(event)} items={items}>
+            <select id={items.id} name={name} className='select' onChange={(event) => handleSelectChange(event)} items={items}>
                {items.map(item => 
-                    <option  value={item} label={item}  />
+                    <option   value={item} label={item}  />
                )}
             </select>
         </div>

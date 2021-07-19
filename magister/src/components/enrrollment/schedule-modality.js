@@ -15,8 +15,6 @@ const Shedule = ({prevStep, nextStep, handleChange, values}) => {
         prevStep();
     }
 
-
-
     const modality = ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 2020', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb 2021', 'ccccccccccccccccccccccccccccc 2022', 'dddddddddddddddddddddddddddd 2023']
     const schedule = ['1 clase al mes practica y progrmamaicon. 10-14', '1 clase al mes practica y progrmamaicon. 10-14', '1 clase al mes practica y progrmamaicon. 10-14' ]
 
