@@ -7,30 +7,31 @@ import Tariff from './tariff';
 import PersonalData from './personalData';
 
 
-
 const Enrrollment = () => {
+
+    const [branch, setBranch] = React.useState();
+    const [province, setProvince] = React.useState();
+    const [exStudent, setExStudent] = React.useState();
+    const [modality, setModality] = React.useState();
+    const [schedule, setSchedule] = React.useState();
 
     const [enrollmentData, setEnrollmentData] = React.useState( {
         step: 1,
-        rama: '',
-        city: '',
-        exStudent: '',
-        presentation: '',
-        modality:'',
-        schedule:'',
-        tariff: '',
-        name:'',
-        dni:'',
-        provincia: '', 
-
     });
 
-    const  { rama, localidad, exStudent, presentation, modality, schedule, tariff, name, dni, provincia } = enrollmentData;
-    const values = { rama, localidad, exStudent, presentation, modality, schedule, tariff, name, dni, provincia}
+
+    const data = {
+        branch: branch,
+        province: province,
+        exStudent: exStudent,
+        modality: modality,
+        schedule: schedule
+    }
+
+    console.log(data)
 
     const  prevStep = () => {
         const step = enrollmentData.step;
-        
         setEnrollmentData({step: step - 1})       
     } 
     const nextStep = () => {
@@ -38,28 +39,42 @@ const Enrrollment = () => {
         setEnrollmentData({step: step + 1}) 
     };
 
-    const handleChange = input =>  event => {
-        setEnrollmentData({[input]: event.target.value})
-    };
+    const selectBranch = (event) => {
+        setBranch(event)
+    }
+    const selectProvince = event => {
+        setProvince(event)
+    }
+    const selectExStudent = event =>  {
+        setExStudent(event)
+    }
+    const selectModality = event => {
+        setModality(event)
+    }
+    const selectSchedule = event => {
+        setSchedule(event)
+    }
 
     const enrrollement = (enrollmentData) => {
         switch(enrollmentData.step) {
             case 1:
                 return ( 
                 <Specialize 
-                nextStep={nextStep}
-                handleChange={handleChange}
-                values={values}
+                    nextStep={nextStep}
+                    selectBranch={selectBranch}
+                    selectProvince={selectProvince}
+                    selectExStudent={selectExStudent}
+                    
                 /> 
-                
                 )
             case 2:
                 return (
                     <Shedule
                         prevStep={prevStep}
                         nextStep={nextStep}
-                        handleChange={handleChange}
-                        values={values} 
+                        selectModality={selectModality}
+                        selectSchedule={selectSchedule}
+                         
                     />
                 )
             case 3:
@@ -67,8 +82,8 @@ const Enrrollment = () => {
                     <Tariff 
                         prevStep={prevStep}
                         nextStep={nextStep}
-                        handleChange={handleChange}
-                        values={values} 
+                        handleChange={null}
+                         
                     />
                 )
             case 4:
@@ -76,8 +91,8 @@ const Enrrollment = () => {
                     <PersonalData
                         prevStep={prevStep}
                         nextStep={nextStep}
-                        handleChange={handleChange}
-                        values={values}  
+                        handleChange={null}
+                          
                         />
                 )
             default:
@@ -89,13 +104,14 @@ const Enrrollment = () => {
         <div>
             <div className='container'>
                 <Phases />
+               
                 <div className='fondo'>
-                   {enrrollement (enrollmentData)}
+                   {enrrollement(enrollmentData)}
                 </div>
+               
             </div>
         </div>
     )
 }
-
 
 export default Enrrollment;

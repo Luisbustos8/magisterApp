@@ -8,7 +8,7 @@ function Checkbox({  items, checked, handleChange}){
 
    const handleRadioChange = (item) => {
         setSelected(item);
-        handleChange(item)
+        handleChange(item);
    }
     return (
         <div className="ra-button" >

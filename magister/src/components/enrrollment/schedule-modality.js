@@ -1,9 +1,38 @@
 import React from 'react';
+import { getDataModality, getDataSchedule } from '../data/data';
 import Checkbox from '../forms/checkbox';
 import './schedule-modality.css'
 
 
-const Shedule = ({prevStep, nextStep, handleChange, values}) => {
+const Shedule = ({prevStep, nextStep, selectSchedule, selectModality}) => {
+
+    const [schedule, setSchedule] = React.useState([]);
+    const [modality, setModality] = React.useState([]);
+
+    React.useEffect(() => {
+       getSchedule();
+       getModality();
+    },[])
+
+    const getSchedule = async () => {
+        const dataSchedule = await getDataSchedule();
+        
+        const schedules =  [];
+        dataSchedule.forEach((schedule => {
+            schedules.push(schedule.data().name)
+        }));
+        setSchedule(schedules)
+    };
+
+    const getModality= async () => {
+        const dataModality = await getDataModality();
+        
+        const modality =  [];
+        dataModality.forEach((mod => {
+            modality.push(mod.data().name)
+        }));
+        setModality(modality)
+    };
 
      const continueEnrollment = (e)=> {
         e.preventDefault();
@@ -15,9 +44,17 @@ const Shedule = ({prevStep, nextStep, handleChange, values}) => {
         prevStep();
     }
 
-    const modality = ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 2020', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb 2021', 'ccccccccccccccccccccccccccccc 2022', 'dddddddddddddddddddddddddddd 2023']
-    const schedule = ['1 clase al mes practica y progrmamaicon. 10-14', '1 clase al mes practica y progrmamaicon. 10-14', '1 clase al mes practica y progrmamaicon. 10-14' ]
+     const handleModality = radiocheck => {
+        selectModality(radiocheck)
+    }
+    const handleSchedule = radiocheck => {
+        selectSchedule(radiocheck)
+    }
 
+    
+
+    
+    
     return (
         <div>
             <div>
@@ -28,21 +65,17 @@ const Shedule = ({prevStep, nextStep, handleChange, values}) => {
                     <h4 className='modality'>(Selecciona una opción)</h4>
                 </div>
                 <div className='checkbox-modality'>
-                    <Checkbox 
-                        items={modality}
-                        value={values.modality}
-                        onChange={handleChange=('modality')}
-                         />
+                     {modality.map(item =>
+                <button className='active-button' onClick={() => handleModality(item)} >{item}</button>
+            )} 
                 </div>
                  <div className='container-schedule'>
                     <h2 className='schedule'>Horario</h2>
                     <h4 className='schedule'>(Selecciona una opción)</h4>
                 <div className='checkbox-schedule'>
-                    <Checkbox 
-                        items={schedule}
-                        onChange={handleChange=('schedule')}
-                        value={values.schedule}
-                         />
+                    {schedule.map(item =>
+                        <button className='active-button' onClick={() => handleSchedule(item)} >{item}</button>
+                    )} 
                 </div>
                 <div className='buttons'>
                     <button 
