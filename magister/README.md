@@ -4,6 +4,18 @@
 npm install
 ```
 
+# Firebase
+
+### Para configurar firebase
+
+```
+npm install firebase
+```
+
+# NOTA
+
+### Dejar el .env.example en .env y pegar la tu apiKey de Firebase
+
 ### `npm start`
 
 Runs the app in the development mode.\
